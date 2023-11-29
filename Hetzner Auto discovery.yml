@@ -1,0 +1,37 @@
+global:
+  scrape_interval: 30s
+
+scrape_configs:
+  - job_name: 'node-exporter'
+    hetzner_sd_configs:
+      - role: "hcloud"
+        bearer_token: "Your Token"
+        
+    relabel_configs:
+      - source_labels: [__meta_hetzner_server_name]
+        target_label: instance
+      - source_labels: [__meta_hetzner_hcloud_ipv4]
+        target_label: __address__
+        replacement: '$1:9100'
+      - target_label: Key
+        replacement: Label
+      - source_labels: [__meta_hetzner_hcloud_label_kafka]
+        regex: "true"
+        target_label: service
+        replacement: kafka
+      - source_labels: [__meta_hetzner_hcloud_label_redis]
+        regex: "true"
+        target_label: service
+        replacement: redis
+      - source_labels: [__meta_hetzner_hcloud_label_elasticsearch]
+        regex: "true"
+        target_label: service
+        replacement: elastic
+      - source_labels: [__meta_hetzner_hcloud_label_postgresql]
+        regex: "true"
+        target_label: service
+        replacement: postgresql
+      - source_labels: [__meta_hetzner_hcloud_label_nginx]
+        regex: "true"
+        target_label: service
+        replacement: nginx
