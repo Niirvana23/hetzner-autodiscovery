@@ -5,7 +5,7 @@ To enable auto-discovery for Hetzner servers and services, follow these steps:
 
 1- Clone or download this repository to your local machine.
 
-2- Open the prometheus.yml file in a text editor.
+2- Open the Hetzner Auto discovery.yml file in a text editor. (this exp of prometheus.yml file)
 
 3- Customize the configuration based on your Hetzner infrastructure setup.
 
