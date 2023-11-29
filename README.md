@@ -1,4 +1,4 @@
-# hetzner auto discovery
+# hetzner Prometheus auto discovery
 This repository provides a Prometheus configuration file with auto-discovery for Hetzner infrastructure. It allows Prometheus to dynamically discover and monitor Hetzner servers and services, providing valuable insights into the health and performance of your infrastructure.
 ### Configuration
 To enable auto-discovery for Hetzner servers and services, follow these steps:
